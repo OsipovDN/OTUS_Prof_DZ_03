@@ -8,7 +8,7 @@ find_package(GTest)
 configure_file(version.h.in version.h)
 
 add_executable (Allocate Allocate.cpp)
-add_executable(Allocate_gtest test/Alloc_gtest.cpp)
+add_executable(Allocate_gtest test/Allocate_gtest.cpp)
 
 target_include_directories(
     Allocate
