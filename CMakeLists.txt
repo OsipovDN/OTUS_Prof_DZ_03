@@ -81,4 +81,4 @@ include(CPack)
 enable_testing()
 
 
-add_test(Allocate_gtest Allocate_gtest)
+add_test(Alloc_gtest Alloc_gtest)
