@@ -28,8 +28,6 @@ public:
 		std::cout << std::endl;
 	}
 	~List();
-	
-
 };
 template <typename T, typename  _Alloc>
 List<T, _Alloc>::List(const T& val) :List() {
@@ -54,14 +52,15 @@ template <typename T, typename _Alloc>
 void List<T, _Alloc>::push_back(const T& val) {
 	Node* temp = std::allocator_traits<nAlloc>::allocate(nd, 1);
 	std::allocator_traits<nAlloc>::construct(nd, temp, val);
-	if (is_empty()) {
+	if (size == 0)
 		first = last = temp;
-		size += 1;
-		return;
+	else{
+		last->next = temp;
+		last = temp;
 	}
-	last->next = temp;
-	last = temp;
 	size += 1;
+	return;
+
 }
 
 
