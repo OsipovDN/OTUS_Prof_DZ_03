@@ -40,7 +40,7 @@ public:
 		pos += num;
 		return p;
 	}
-	void deallocate(T*p, size_t) {}
+	void deallocate(T*, size_t) {}
 };
 
 template <class T, class U, size_t N>
