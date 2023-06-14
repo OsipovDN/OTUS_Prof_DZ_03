@@ -46,6 +46,8 @@ List<T, _Alloc>::~List() {
 		std::allocator_traits<nAlloc>::deallocate(nd, temp,1);
 		temp = buf;
 	}
+	std::allocator_traits<nAlloc>::destroy(nd, temp);
+	std::allocator_traits<nAlloc>::deallocate(nd, temp, 1);
 }
 
 template <typename T, typename _Alloc>
